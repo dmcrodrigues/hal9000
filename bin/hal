@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+# coding: utf-8
+
+require 'hal9000'
+
+HAL9000::Command.execute(ARGV)
