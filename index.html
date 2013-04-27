@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Hal9000 by dmcrodrigues</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Hal9000</h1>
+        <p>Stop typing and remember all your commands, start typing human readable actions.</p>
+        <p class="view"><a href="https://github.com/dmcrodrigues/hal9000">View the Project on GitHub <small>dmcrodrigues/hal9000</small></a></p>
+        <ul>
+          <li><a href="https://github.com/dmcrodrigues/hal9000/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/dmcrodrigues/hal9000/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/dmcrodrigues/hal9000">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p>hal maps your commands to an human readable form, you  just need to think what you want to do and hal will do it for you with pleasure! It's like a domain for  a not-easy-to-remember ip but for your commands.</p>
+
+<h2>Motivation</h2>
+
+<p>Aliases are extremely helpful and simple but they are not always self descriptive and easy to remember. Hal is an helper for this, it helps manage your aliases, create, delete, keep them on a single location. Finally it maps your actions into your thoughts. Thoughts? What?</p>
+
+<p>I give you an example. I'm currently using a remote server and the access is made directly by the ip address. I found that very boring and hard to remember.</p>
+
+<p>Well, this was before hal. Now i can simply do:</p>
+
+<pre><code>hal connect to my remote server
+</code></pre>
+
+<p>Hal will recognize this and will map to my <code>ssh user@x.x.x.x</code> command. I found it helpful.</p>
+
+<h3>Inspiration</h3>
+
+<p>I developed hal with some inspiring references in mind.</p>
+
+<ol>
+<li>
+<a href="http://hubot.github.com/">HUBOT</a> from Github.</li>
+<li>
+<a href="http://zachholman.com/boom">boom</a> from Zach Holman.</li>
+<li>
+<a href="http://en.wikipedia.org/wiki/HAL_9000">HAL 9000</a>, the super computer from the <code>2001: A Space Odyssey</code> movie.</li>
+</ol><h2>Installation</h2>
+
+<p>Install it via RubyGems:</p>
+
+<pre><code>$ gem install hal9000
+</code></pre>
+
+<h2>Usage</h2>
+
+<pre><code>example usage:
+  hal --list                          lists all actions
+  hal --create &lt;thought&gt; &lt;action&gt;     create a new action
+  hal --delete &lt;thought&gt;              delete an action
+
+  hal &lt;thought&gt;                       execute an action
+
+  hal --version                       show hal version
+  hal --help                          show this shiny help
+</code></pre>
+
+<h2>Examples</h2>
+
+<pre><code>$ hal --create "say hello" "echo 'Hello'"
+$ hal say hello
+you - say hello
+hal - right way sir! running: 'echo 'Hello''
+Hello
+
+$ hal --create "start jenkins" "java -jar /usr/local/opt/jenkins/libexec/jenkins.war"
+$ hal start jenkins
+(jenkins starts)
+...
+
+$ hal --create "copy my ssh key" "pbcopy &lt; ~/.ssh/id_rsa.pub"
+$ hal copy my ssh key
+(key copied to clipboard)
+</code></pre>
+
+<h2>Portability</h2>
+
+<p>Hal uses a single JSON file to store all your thoughts and actions. This file is a pure JSON file and is available on your <code>$HOME</code> directory with the name <code>.hal</code>. Alternatively, it's possible to configure the location of this file using an enviroment variable with the name <code>HAL_FILE</code>.</p>
+
+<h2>Contributing</h2>
+
+<p>Hal is currently in a very alpha version so any help is very welcome. Just fork it! :)</p>
+
+<h2>Licence</h2>
+
+<p><a href="http://en.wikipedia.org/wiki/MIT_License">MIT License</a> (c) <a href="mailto:david.ndh@gmail.com">David Rodrigues</a></p>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/dmcrodrigues">dmcrodrigues</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-40479941-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
